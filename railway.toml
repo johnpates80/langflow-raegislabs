@@ -1,0 +1,17 @@
+# railway.toml
+
+[build]
+builder = "DOCKERFILE"
+
+[deploy]
+startCommand = "langflow db upgrade && langflow run"
+
+[env]
+LANGFLOW_PORT = "7860"
+PORT = "7860"
+# LANGFLOW_DATABASE_URL will be automatically injected by Railway if using the Postgres plugin
+
+[healthcheck]
+path = "/health"
+interval = 10000
+timeout = 3000
