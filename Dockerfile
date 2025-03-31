@@ -91,4 +91,5 @@ WORKDIR /app
 ENV LANGFLOW_HOST=0.0.0.0
 ENV LANGFLOW_PORT=${PORT}
 
-CMD ["bash", "-c", "langflow db upgrade && langflow run"]
+CMD ["langflow", "run"]
+
